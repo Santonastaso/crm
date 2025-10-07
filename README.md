@@ -2,94 +2,151 @@
 
 A full-featured CRM built with React, shadcn-admin-kit, and Supabase.
 
-https://github.com/user-attachments/assets/0d7554b5-49ef-41c6-bcc9-a76214fc5c99
+## 🚀 Live Demo
 
-Atomic CRM is free and open-source. You can test it online at https://marmelab.com/atomic-crm-demo.
+Visit the live application: [https://santonastaso.github.io/crm/](https://santonastaso.github.io/crm/)
 
-## Features
+## ✨ Features
 
-- 📇 **Organize Contacts**: Keep all your contacts in one easily accessible place.
-- ⏰ **Create Tasks & Set Reminders**: Never miss a follow-up or deadline.
-- 📝 **Take Notes**: Capture important details and insights effortlessly.
-- ✉️ **Capture Emails**: CC Atomic CRM to automatically save communications as notes.
-- 📊 **Manage Deals**: Visualize and track your sales pipeline in a Kanban board.
-- 🔄 **Import & Export Data**: Easily transfer contacts in and out of the system.
-- 🔐 **Control Access**: Log in with Google, Azure, Keycloak, and Auth0.
-- 📜 **Track Activity History**: View all interactions in aggregated activity logs.
-- 🔗 **Integrate via API**: Connect seamlessly with other systems using our API.
-- 🛠️ **Customize Everything**: Add custom fields, change the theme, and replace any component to fit your needs.
+- 📇 **Organize Contacts**: Keep all your contacts in one easily accessible place
+- ⏰ **Create Tasks & Set Reminders**: Never miss a follow-up or deadline
+- 📝 **Take Notes**: Capture important details and insights effortlessly
+- ✉️ **Capture Emails**: CC Atomic CRM to automatically save communications as notes
+- 📊 **Manage Deals**: Visualize and track your sales pipeline in a Kanban board
+- 🔄 **Import & Export Data**: Easily transfer contacts in and out of the system
+- 🔐 **Control Access**: Log in with Google, Azure, Keycloak, and Auth0
+- 📜 **Track Activity History**: View all interactions in aggregated activity logs
+- 🔗 **Integrate via API**: Connect seamlessly with other systems using our API
+- 🛠️ **Customize Everything**: Add custom fields, change the theme, and replace any component to fit your needs
 
-## Installation
+## 🛠️ Technology Stack
 
-To run this project locally, you will need the following tools installed on your computer:
+- **Frontend**: React 19, TypeScript, Vite
+- **UI Components**: shadcn/ui, Radix UI
+- **Backend**: Supabase (PostgreSQL, Auth, Storage)
+- **Styling**: Tailwind CSS
+- **State Management**: TanStack Query
+- **Forms**: React Hook Form with Zod validation
 
-- Make
-- Node 22 LTS
-- Docker (required by Supabase)
+## 📦 Installation
 
-Fork the [`marmelab/atomic-crm`](https://github.com/marmelab/atomic-crm) repository to your user/organization, then clone it locally:
+### Prerequisites
 
-```sh
-git clone https://github.com/[username]/atomic-crm.git
-```
+- Node.js 22 LTS
+- npm or yarn
+- Supabase account
 
-Install dependencies:
+### Local Development
 
-```sh
-cd atomic-crm
-make install
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Santonastaso/crm.git
+   cd crm
+   ```
 
-This will install the dependencies for the frontend and the backend, including a local Supabase instance.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Once you app is configured, start the app locally with the following command:
+3. **Set up environment variables**
+   ```bash
+   cp .env.development.example .env.development
+   ```
+   
+   Update `.env.development` with your Supabase credentials:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_IS_DEMO=false
+   ```
 
-```sh
-make start
-```
+4. **Set up the database**
+   - Go to your Supabase project dashboard
+   - Navigate to SQL Editor
+   - Run the contents of `setup_database.sql`
+   - Run the contents of `fix_views_and_permissions.sql`
 
-This will start the Vite dev server for the frontend, the local Supabase instance for the API, and a Postgres database (thanks to Docker).
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-You can then access the app via [http://localhost:5173/](http://localhost:5173/). You will be prompted to create the first user.
+6. **Open your browser**
+   Navigate to `http://localhost:5173` and create your first user account.
 
-If you need debug the backend, you can access the following services: 
+## 🗄️ Database Setup
 
-- Supabase dashboard: [http://localhost:54323/](http://localhost:54323/)
-- REST API: [http://127.0.0.1:54321](http://127.0.0.1:54321)
-- Attachments storage: [http://localhost:54323/project/default/storage/buckets/attachments](http://localhost:54323/project/default/storage/buckets/attachments)
-- Inbucket email testing service: [http://localhost:54324/](http://localhost:54324/)
+The application includes comprehensive SQL scripts for database setup:
 
-## User Documentation
+- `setup_database.sql` - Creates all tables, views, functions, and policies
+- `fix_views_and_permissions.sql` - Fixes permissions for proper access
 
-1. [User Management](./doc/user/user-management.md)
-2. [Importing And Exporting Data](./doc/user/import-contacts.md)
-3. [Inbound Email](./doc/user/inbound-email.md)
+## 🚀 Deployment
 
-## Deploying to Production
+### GitHub Pages (Automatic)
 
-1. [Configuring Supabase](./doc/developer/supabase-configuration.md)
-2. [Configuring Inbound Email](./doc/developer/inbound-email-configuration.md) *(optional)*
-3. [Deployment](./doc/developer/deploy.md)
+This repository is configured for automatic deployment to GitHub Pages:
 
-## Customizing Atomic CRM
+1. **Push to main branch** - The GitHub Action will automatically build and deploy
+2. **Access your app** at `https://santonastaso.github.io/crm/`
 
-To customize Atomic CRM, you will need TypeScript and React programming skills as there is no graphical user interface for customization. Here are some resources to assist you in getting started.
+### Manual Deployment
 
-1. [Customizing the CRM](./doc/developer/customizing.md)
-2. [Creating Migrations](./doc/developer/migrations.md) *(optional)*
-3. [Using Fake Rest Data Provider for Development](./doc/developer/data-providers.md) *(optional)*
-4. [Architecture Decisions](./doc/developer/architecture-choices.md) *(optional)*
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
 
-## Testing Changes
+2. **Deploy the `dist` folder** to your hosting provider
 
-This project contains unit tests. Run them with the following command:
+## 🔧 Configuration
 
-```sh
-make test
-```
+### Environment Variables
 
-You can add your own unit tests powered by Jest anywhere in the `src` directory. The test files should be named `*.test.tsx` or `*.test.ts`.
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_SUPABASE_URL` | Your Supabase project URL | Yes |
+| `VITE_SUPABASE_ANON_KEY` | Your Supabase anonymous key | Yes |
+| `VITE_IS_DEMO` | Set to `false` for production | Yes |
 
-## License
+### Supabase Setup
 
-This project is licensed under the MIT License, courtesy of [Marmelab](https://marmelab.com). See the [LICENSE.md](./LICENSE.md) file for details.
+1. Create a new Supabase project
+2. Run the database setup scripts
+3. Configure authentication settings
+4. Set up storage bucket for attachments
+
+## 📚 Documentation
+
+- [User Management](./doc/user/user-management.md)
+- [Importing And Exporting Data](./doc/user/import-contacts.md)
+- [Inbound Email](./doc/user/inbound-email.md)
+- [Customizing the CRM](./doc/developer/customizing.md)
+- [Deployment Guide](./doc/developer/deploy.md)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Atomic CRM](https://github.com/marmelab/atomic-crm) by Marmelab
+- UI components by [shadcn/ui](https://ui.shadcn.com/)
+- Backend powered by [Supabase](https://supabase.com/)
+
+## 📞 Support
+
+If you have any questions or need help, please open an issue on GitHub.
+
+---
+
+**Made with ❤️ by [Andrea Santonastaso](https://github.com/Santonastaso)**
