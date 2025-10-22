@@ -110,7 +110,7 @@ export const CRM = ({
       return;
     }
     const img = new Image();
-    img.src = `https://atomic-crm-telemetry.marmelab.com/atomic-crm-telemetry?domain=${window.location.hostname}`;
+    img.src = `https://pinger-telemetry.marmelab.com/pinger-telemetry?domain=${window.location.hostname}`;
   }, [disableTelemetry]);
 
   return (

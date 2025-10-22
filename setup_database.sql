@@ -1,5 +1,5 @@
--- Atomic CRM Database Setup Script
--- This script creates all necessary tables, views, functions, and policies for Atomic CRM
+-- Pinger Database Setup Script
+-- This script creates all necessary tables, views, functions, and policies for Pinger
 -- Run this script in your Supabase SQL editor
 
 -- ==============================================
@@ -695,7 +695,7 @@ INSERT INTO public.tags (name, color) VALUES
 -- SETUP COMPLETE!
 -- ==============================================
 
--- The database is now ready for Atomic CRM
+-- The database is now ready for Pinger
 -- You can now:
 -- 1. Create your first user account in the application
 -- 2. Start adding contacts, companies, deals, and tasks
